@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="shortcut icon" href="../assets/login.png" type="image/x-icon">
+    <style>
+      #main {
+        height: 300px;
+        width: 600px;
+        margin: 20px 0;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        padding: 50px 0;
+      }
+      .name {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        margin-top: 20px;
+      }
+      .btn {
+        color: white;
+        background-color: #3498db;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+      }
+      .btn:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1>Dashboard</h1>
+      
+      <div class="name" id="user-name">
+        
+      </div>
+
+      <button class="btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script src="./dashboard.js"></script>
+  </body>
+</html>
