@@ -11,12 +11,11 @@ function submitForm(e) {
   var usersData = getData();
   var isLogin = false;
 
-  // Search for the user in the stored data
   for (let i = 0; i < usersData.length; i++) {
     if (usersData[i].email === emailInp && usersData[i].password === passwordInp) {
       isLogin = true;
-      localStorage.setItem('login', JSON.stringify(usersData[i])); // Store user data in localStorage
-      window.location.replace('../dashboard/dashboard.html'); // Redirect to dashboard
+      localStorage.setItem('login', JSON.stringify(usersData[i]));
+      window.location.replace('./dashboard/dashboard.html');
       break;
     }
   }
