@@ -15,7 +15,7 @@ function submitForm(e) {
     if (usersData[i].email === emailInp && usersData[i].password === passwordInp) {
       isLogin = true;
       localStorage.setItem('login', JSON.stringify(usersData[i]));
-      window.location.replace('./dashboard/dashboard.html');
+      window.location.replace('./dashboard.html');
       break;
     }
   }
