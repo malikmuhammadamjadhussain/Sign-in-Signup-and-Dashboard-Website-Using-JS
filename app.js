@@ -25,5 +25,5 @@ function submitForm(e) {
   users.push({ username: usernameInp, password: passwordInp, email: emailInp });
   setData(users);
   alert("Account created successfully!");
-  window.location.href = "login/login.html";
+  window.location.href = "./login.html";
 }
