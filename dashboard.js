@@ -5,7 +5,7 @@ if (user) {
   document.getElementById('user-name').textContent = `Welcome, ${user.username}!`;
 } else {
 
-  window.location.replace('../login/login.html');
+  window.location.replace('./login/login.html');
 }
 
 function logout() {
@@ -13,5 +13,5 @@ function logout() {
   localStorage.removeItem('login');
   
 
-  window.location.replace('../login/login.html');
+  window.location.replace('./login/login.html');
 }
