@@ -1,26 +1,35 @@
-function getData() {
-  return JSON.parse(localStorage.getItem('users')) || [];
+var usersData = JSON.parse(localStorage.getItem('users')) || [];
+
+function searchData(user) {
+  return usersData.find(
+    (storedUser) => storedUser.email === user.email && storedUser.password === user.password
+  ) || null;
 }
 
 function submitForm(e) {
   e.preventDefault();
 
-  var emailInp = document.getElementById("email").value;
-  var passwordInp = document.getElementById("password").value;
-  
-  var usersData = getData();
-  var isLogin = false;
+  var emailValue = document.getElementById('email').value.trim();
+  var passValue = document.getElementById('password').value;
 
-  for (let i = 0; i < usersData.length; i++) {
-    if (usersData[i].email === emailInp && usersData[i].password === passwordInp) {
-      isLogin = true;
-      localStorage.setItem('login', JSON.stringify(usersData[i]));
-      window.location.replace('./dashboard.html');
-      break;
-    }
+  if (!emailValue || !passValue) {
+    alert("Both email and password are required.");
+    return;
   }
 
-  if (!isLogin) {
-    alert("Invalid email or password!");
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(emailValue)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  var isLogin = searchData({ email: emailValue, password: passValue });
+
+  if (isLogin) {
+    alert(`Welcome back, ${isLogin.username}!`);
+    localStorage.setItem('login', JSON.stringify(isLogin));
+    window.location.replace('./dashboard.html');
+  } else {
+    alert("Invalid email or password. Please try again.");
   }
 }
