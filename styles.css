@@ -1,7 +1,7 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f6f9;
-  color: #333;
+  background-color: #1b1b1b;
+  color: #f1f1f1;
   margin: 0;
   padding: 0;
   display: flex;
@@ -13,35 +13,45 @@ body {
 }
 
 h1 {
-  font-size: 2.2rem;
-  color: #2c3e50;
+  font-size: 2.5rem;
+  color: #ff6f61;
   text-align: center;
   margin-bottom: 20px;
+  letter-spacing: 1px;
+  animation: fadeIn 1s ease-out, bounce 2s infinite;
 }
 
 button {
-  background-color: #3498db;
+  background-color: #ff6f61;
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 12px 25px;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s, transform 0.2s ease;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  animation: fadeIn 1.5s ease-out, pulse 2s infinite;
 }
 
 button:hover {
-  background-color: #2980b9;
-  transform: scale(1.05);
+  background-color: #e05c4a;
+  transform: translateY(-3px) scale(1.1);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
 }
 
 span {
   font-size: 1rem;
-  color: #3498db;
+  color: #ff6f61;
   cursor: pointer;
-  text-align: center;
   display: block;
-  margin-top: 10px;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+  animation: fadeIn 2s ease-out, scaleUp 1.5s infinite alternate;
 }
 
 span:hover {
@@ -49,81 +59,139 @@ span:hover {
 }
 
 #main {
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: #2b2b2b;
+  padding: 50px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   text-align: center;
-  margin-top: 20px;
+  animation: slideIn 1s ease-out, rotateIn 1.5s ease-out;
 }
 
 form input {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   margin: 10px 0;
-  border: 1px solid #ccd1d9;
-  border-radius: 5px;
+  border: 1px solid #444;
+  border-radius: 8px;
   font-size: 1rem;
-  background-color: #f9f9f9;
-  color: #333;
-  transition: border-color 0.3s;
+  background-color: #333;
+  color: #f1f1f1;
+  transition: all 0.3s ease;
+  animation: fadeIn 1.5s ease-out;
+}
+
+form input:focus {
+  border-color: #ff6f61;
+  outline: none;
 }
 
 form input[type="submit"] {
-  background-color: #3498db;
+  background-color: #007acc;
   color: white;
   border: none;
   cursor: pointer;
   font-weight: bold;
   margin-top: 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
 
 form input[type="submit"]:hover {
-  background-color: #2980b9;
-}
-
-form input:focus {
-  border-color: #3498db;
-  outline: none;
+  background-color: #005999;
 }
 
 .error {
-  color: #e74c3c;
+  color: #ff6f61;
   font-size: 0.9rem;
   margin-top: 10px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   body {
-      padding: 20px;
+    padding: 20px;
   }
 
   #main {
-      padding: 20px;
-      width: 100%;
-      max-width: 100%;
-  }
-
-  button {
-      padding: 10px 15px;
-      font-size: 1rem;
+    padding: 40px;
+    width: 80%;
+    max-width: 500px;
   }
 
   h1 {
-      font-size: 1.5rem;
+    font-size: 2.2rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  span {
+    font-size: 0.9rem;
   }
 }
 
-form input:focus {
-  border-color: #3498db;
-  outline: none;
+@media (max-width: 768px) {
+  #main {
+    padding: 30px;
+    width: 85%;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+
+  form input {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  span {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  #main {
+    padding: 25px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  form input {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+
+  span {
+    font-size: 0.75rem;
+  }
 }
 
 button:focus {
   outline: none;
-  box-shadow: 0 0 10px #3498db;
+  box-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
 }
 
 ::-webkit-scrollbar {
@@ -131,15 +199,78 @@ button:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #b1b8c1;
+  background-color: #444;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #e6e9f0;
+  background-color: #1b1b1b;
 }
 
 a:hover {
-  color: #2980b9;
+  color: #ff6f61;
   text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0);
+  }
 }
